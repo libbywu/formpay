@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/insidePay.css">
+    <title>付款方式</title>
+</head>
+<body>
+    <form class="mypay">
+        <!--付款方式選單第一層-->
+        <div class="pay_menu">
+            <div style="padding: 15px;">
+                <p class="subtitle">選擇付款方式</p>
+            </div>
+
+            <ul>
+                <li>
+                    <button id="" type="button" title="取貨付款" class="btn credit_pay" disabled>取貨付款
+                    </button>
+                </li>
+                <li>
+                    <button id="virtualBtn" type="button" title="ibon付款" class="btn credit_pay" >ibon付款
+                    </button>
+                </li>
+                <li>
+                    <button id="" type="button" title="超商代碼" class="btn credit_pay" disabled>超商代碼繳費
+                    </button>
+                </li>
+                <li>
+                    <button id="creditCardBtn" type="button" title="信用卡" class="btn credit_pay">信用卡
+                    </button>
+                </li>
+                <li>
+                    <button id="creditCardBtn_installment" type="button" title="信用卡分期" class="btn credit_pay">信用卡分期
+                    </button>
+                </li>
+                <li>
+                    <button id="creditCardBtn_discount" type="button" title="信用卡紅利" class="btn credit_pay">信用卡紅利
+                    </button>
+                </li>
+                <li>
+                    <button id="" type="button" title="虛擬帳號" class="btn credit_pay" disabled>虛擬帳號
+                    </button>
+                </li>
+                <li>
+                    <button id="" type="button" title="ATM轉帳" class="btn credit_pay" disabled>ATM轉帳
+                    </button>
+                </li>
+                <li>
+                    <button type="button" title="Google Pay" class="btn g_pay" disabled>
+                        <img src="images/logo-google.svg">
+                    </button>
+                </li>
+                <li>
+                    <button type="button" title="line pay" class="btn line_pay" disabled>
+                        <img src="images/logo-linepay.svg">
+                    </button>
+                </li>
+                <li>
+                    <button type="button" title="Pi 拍錢包" class="btn pi_pay" disabled>
+                        <img src="images/logo-pi.svg">
+                    </button>
+                </li>
+
+                <li>
+                    <button type="button" title="微信支付" class="btn wechat_pay" disabled>
+                        <img src="images/logo-wechat.svg">
+                    </button>
+                </li>
+                <li>
+                    <button title="街口支付" class="btn jko_pay" disabled>
+                        <img src="images/logo-jkopay.svg">
+                    </button>
+                </li>
+                <li>
+                    <button type="button" title="支付寶" class="btn ali_pay" disabled>
+                        <img src="images/logo-alipay.svg">
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!--付款方式選單第二層-->
+        <div id="virtualInfo" class="pay_menu_2 pb-3 hidden">
+            <h5 class="col-xs-full subtitle_2 pt-3">請選擇銀行</h5>
+            <ul>
+                <li>
+                    <a href="#" title="合作金庫銀行" class="btn_around">
+                        <img src="images/006.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="玉山銀行" class="btn_around">
+                        <img src="images/808.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="第一銀行" class="btn_around">
+                        <img src="images/007.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="星展銀行" class="btn_around">
+                        <img src="images/810.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--信用卡-->
+        <section id="creditCardInfo" class="payment_info hidden">
+            <div class="row">
+                <div class="col-xs-full pt-3">
+                    <div class="d-flex">
+                        <p class="subtitle_2">信用卡資料</p>
+                        <div class="pl-3">
+                            <input type="checkbox" id="ordererSame" checked>
+                            <label for="ordererSame">持卡人同訂購人</label>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <img class="sslImg" src="images/SSL seal_60x84.gif">
+                        <p>交易全程採用嚴密的「SSL憑證」安全加密技術，請安心付款。</p>
+                    </div>
+                </div>
+                <div class="col-xs-full col-half hidden">
+                    <div class="form-group fillIn">
+                        <label>持卡人姓名</label>
+                        <input type="text" class="f-control">
+                        <div class="invalid-feedback">請填寫姓名</div>
+                    </div>
+                </div>
+                <div class="col-xs-full col-half">
+                    <div class="form-group fillIn">
+                        <label>信用卡卡號</label>
+                        <input type="number" class="f-control" placeholder="0000 0000 0000 0000">
+                        <div class="invalid-feedback">請填寫信用卡卡號</div>
+                    </div>
+                </div>
+                <div class="col-xs-half">
+                    <div class="form-group fillIn">
+                        <label>有效日期</label>
+                        <input type="text" class="f-control" placeholder="MM/YY">
+                        <div class="invalid-feedback">請填寫有效日期</div>
+                    </div>
+                </div>
+                <div class="col-xs-half">
+                    <div class="form-group fillIn">
+                        <label>末三碼</label>
+                        <input type="number" class="f-control" placeholder="123">
+                        <div class="invalid-feedback">請填寫末三碼</div>
+                    </div>
+                </div>
+            </div>
+            <!--分期-->
+            <div id="creditCard_installment" class="hidden">
+                <div class="row pb-3">
+                    <div class="col-xs-full">
+                        <div class="comment">
+                            <img src="images/info.svg">
+                            <p>您的購物金額除以期數後之餘額將會合併在第一期付款金額中，下方顯示的期數金額為無條件捨去後的整數，亦為您第二期起每期所需支付的金額。</p>
+                        </div>
+                    </div>
+                    <h5 class="col-xs-full subtitle_2">請選擇分期</h5>
+                    <div class="col-xs-half col-half">
+                        <div class="check_round red">
+                            <input type="radio" id="installment_3" name="periodNumber">
+                            <label for="installment_3">NT$200 x 3期</label>
+                            <div class="check"></div>
+                            <div class="sel_collapse">花旗、台新、聯邦、國泰世華、玉山、台北富邦、中信、永豐、遠東、星展銀行、新光、匯豐、兆豐、凱基(原萬泰)、第一、上海、日盛</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-half col-half">
+                        <div class="check_round red">
+                            <input type="radio" id="installment_6" name="periodNumber">
+                            <label for="installment_6">NT$100 x 6期</label>
+                            <div class="check"></div>
+                            <div class="sel_collapse">花旗、台新、聯邦、國泰世華、玉山、台北富邦、中信、永豐、遠東、星展銀行、新光、匯豐、兆豐、凱基(原萬泰)、第一、上海、日盛</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--紅利-->
+            <div id="creditCard_discount" class="hidden">
+                <div class="row pb-3">
+                    <div class="col-xs-full">
+                        <div class="comment">
+                            <img src="images/info.svg">
+                            <p>系統將依您信用卡的所有點數進行折抵，不足額將以信用卡一次付清，其他說明請參照下方各家銀行折抵規範。</p>
+                        </div>
+                    </div>
+                    <h5 class="col-xs-full subtitle_2">接受以下2家銀行信用卡紅利折抵</h5>
+                    <div class="col-xs-half col-half">
+                        <div class="card">
+                            <h6>華南銀行</h6>
+                            <p>最高折抵 : 30%</p>
+                            <p>消費限制 : 單筆 1,000元</p>
+                            <p>點數限制 : 紅利 1000 點</p>
+                            <p>折抵比例 : 1000點 = 50元</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-half col-half">
+                        <div class="card">
+                            <h6>華南銀行</h6>
+                            <p>最高折抵 : 30%</p>
+                            <p>消費限制 : 單筆 1,000元</p>
+                            <p>點數限制 : 紅利 1000 點</p>
+                            <p>折抵比例 : 1000點 = 50元</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--發票資訊-->
+        <section class="payment_info">
+            <div class="row">
+                <div class="col-xs-full">
+                    <p class="subtitle pt-3" >發票資訊</p>
+                    <div class="comment">
+                        <img src="images/info.svg">
+                        <p>依統一發票使用辦法規定：發票一經開立不得任意更改或改開發票</p>
+                    </div>
+                </div>
+                <div class="col-xs-full">
+                    <div class="invoice_content">
+                        <!--雲端-->
+                        <div class="check_block topRadius">
+                            <label for="cloud">個人電子發票
+                                <input type="radio" name="invoiceBtn" id="cloud">
+                                <div class="check"></div>
+                            </label>
+                        </div>
+                        <div class="cloud_group hidden">
+                            <div class="ADD pl-3">
+                                <input type="radio" id="cloudinvoice_0" name="invoiceCloudType">
+                                <label for="cloudinvoice_0">會員載具</label>
+                                <small>*由ooo為您託管發票，如發票中獎10天內將以掛號方式寄出。</small>
+                            </div>
+                            <div class="ADD pl-3 pt-3">
+                                <input type="radio" id="cloudinvoice_1" name="invoiceCloudType">
+                                <label for="cloudinvoice_1">手機條碼載具</label>
+                            </div>
+                            <div class="invoiceMobile hidden">
+                                <div class="row">
+                                    <div class="col-xs-full col-half pb-2">
+                                        <label>載具條碼</label>
+                                        <input type="text" name="invoiceMobileCode" class="f-control" placeholder="限大寫英數字">
+                                        <div class="invalid-feedback">請輸入載具條碼</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ADD pl-3 pt-3">
+                                <input type="radio" id="cloudinvoice_2" name="invoiceCloudType">
+                                <label for="cloudinvoice_2">自然人憑證條碼</label>
+                            </div>
+                            <div class="invoiceNaturalPerson hidden">
+                                <div class="row">
+                                    <div class="col-xs-full col-half pb-2">
+                                        <label>載具條碼</label>
+                                        <input type="text" name="invoiceNaturalPerson" class="f-control" placeholder="限英數字">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--捐贈-->
+                        <div class="check_block active">
+                            <label for="donate">電子發票捐贈
+                                <input type="radio" name="invoiceBtn" id="donate" checked>
+                                <div class="check"></div>
+                             </label>
+                        </div>
+                        <div class="lovecode_group">
+                            <div class="row">
+                                <div class="col-xs-full col-half pb-3">
+                                    <div class="ADD">
+                                        <input type="radio" id="invoiceLoveCode_1" name="invoiceLoveCode" checked>
+                                        <label for="invoiceLoveCode_1">選擇捐贈單位
+                                        </label>
+                                    </div>
+                                    <select class="f-control w-100">
+                                        <option value="1234" selected>1234 晚德慈善基金會</option>
+                                        <option value="5000">5000 台灣貓狗聯合勸募</option>
+                                        <option value="530">530 台灣家扶</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-full col-half">
+                                    <div class="ADD">
+                                        <input type="radio" id="invoiceLoveCode_2" name="invoiceLoveCode">
+                                        <label for="invoiceLoveCode_2">其他社服團體
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="number" class="f-control w-100" placeholder="請輸入社服團體愛心碼(限數字)" maxlength="7">
+                                        <!-- <small>*請輸入社服團體愛心碼(限數字)</small> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--三聯-->
+                        <div class="check_block">
+                            <label for="b2c">三聯式發票
+                                <input type="radio" name="invoiceBtn" id="b2c">
+                                <div class="check"></div>
+                            </label>
+                        </div>
+                        <div class="company_group hidden">
+                            <div class="row pb-3">
+                                <div class="col-xs-full col-half">
+                                    <div class="form-group fillIn">
+                                        <label>發票台頭</label>
+                                        <input type="text" class="f-control">
+                                    </div>
+                                </div>
+                                <div class="col-xs-full col-half">
+                                    <div class="form-group fillIn">
+                                        <label>統一編號</label>
+                                        <input type="number" class="f-control">
+                                    </div>
+                                </div>
+                                <div class="col-xs-full">
+                                    <div class="address-group fillIn">
+                                        <label>發票地址</label>
+                                        <div class="input-group">
+                                            <input type="number" class="f-control" placeholder="郵遞區號"
+                                                style="width: 4.2rem;">
+                                            <select class="f-control">
+                                                <option value="">請選擇縣(市)</option>
+                                                <option value="">新北市</option>
+                                                <option value="">臺北市</option>
+                                                <option value="">臺南市</option>
+                                                <option value="">桃園市</option>
+                                                <option value="">臺中市</option>
+                                                <option value="">高雄市</option>
+                                                <option value="">宜蘭縣</option>
+                                                <option value="">新竹縣</option>
+                                                <option value="">苗栗縣</option>
+                                                <option value="">彰化縣</option>
+                                                <option value="">南投縣</option>
+                                                <option value="">雲林縣</option>
+                                                <option value="">嘉義縣</option>
+                                                <option value="">屏東縣</option>
+                                                <option value="">臺東縣</option>
+                                                <option value="">花蓮縣</option>
+                                                <option value="">澎湖縣</option>
+                                                <option value="">基隆市</option>
+                                                <option value="">新竹市</option>
+                                                <option value="">嘉義市</option>
+                                                <option value="">金門縣</option>
+                                                <option value="">連江縣</option>
+                                            </select>
+                                            <select class="f-control">
+                                                <option value="">鄉鎮市區</option>
+                                                <option value="">板橋區</option>
+                                            </select>
+                                            <input type="text" maxlength="80" class="f-control" placeholder="請輸入聯絡地址">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--愛心捐款-->
+        <section class="payment_info pt-3">
+            <div class="row">
+                <div class="col-xs-full">
+                    <p class="subtitle">愛心捐款</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-full col-half">
+                    <div class="form-group fillIn">
+                        <label>捐款給</label>
+                        <select class="f-control">
+                            <option value="0">台灣貓狗聯合勸募</option>
+                            <option value="1">台灣家扶</option>
+                            <option value="2">晚德慈善基金會</option>
+                            <option value="3">瑪利亞</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-full col-half">
+                    <div class="form-group fillIn">
+                        <label>捐款金額 TWD</label>
+                        <input type="number" class="f-control text-right" placeholder="元">
+                    </div>
+                </div>
+                <div class="col-xs-full col-full d-flex align-items-center justify-content-end pb-2">
+                    <div class="check_round green">
+                        <input type="radio" id="receipt_1" name="receipt" checked>
+                        <label for="receipt_1">不索取收據</label>
+                        <div class="check"></div>
+                    </div>
+                    <div class="check_round green">
+                        <input type="radio" id="receipt_2" name="receipt">
+                        <label for="receipt_2">索取收據</label>
+                        <div class="check"></div>
+                    </div>
+                </div>
+                <div class="col-xs-full col-half">
+                    <div class="form-group underline d-flex justify-content-between">
+                        <p>購物金額</p>
+                        <p><span class="price pr-2">1,888</span>元</p>
+                    </div>
+                </div>
+                <div class="col-xs-full col-half">
+                    <div class="form-group underline d-flex justify-content-between">
+                        <p>此次付款總額</p>
+                        <p><span class="price pr-2">1,988</span>元</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--submit button-->
+        <div class="btnSubmit">
+            <button type="submit" class="">
+                確定送出
+            </button>
+        </div>
+    </form>
+<script src="plugins/jQuery/jquery-3.3.1.min.js"></script>
+<script src="js/inside_pay.js"></script>
+</body>
+</html>
